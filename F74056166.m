@@ -77,6 +77,10 @@ for picturenum = 1:2
         end
     end
     
+    subplot(2,2,2*picturenum-1);
+    imshow(equalization(:,:));
+    title('Histogram equalization');
+    
     %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Sobel operator
     equalization = double(equalization);
     Gx = [-1 0 1; -2 0 2; -1 0 1];
@@ -99,8 +103,9 @@ for picturenum = 1:2
     end
     %change array to uint8
     mag = uint8(mag);
-    subplot(2,1,picturenum);
+    subplot(2,2,2*picturenum);
     imshow(mag(:,:));
+    title('Sobel operator');
     clear x;
     clear grauscale;
     clear equalization;
