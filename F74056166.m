@@ -24,11 +24,11 @@ for picturenum = 1:2
         end
     end
     %get gaussian array
-    a = 0.84089642;         %Standard Deviation
-    k = 3;                  %gaussian array size-1 /2
+    a = 2;         %Standard Deviation
+    k = 2;                  %gaussian array size-1 /2
     k_row = 2*k + 1;        %gaussian array size
-    for i=1:7
-        for j = 1:7
+    for i=1:k_row
+        for j = 1:k_row
             g(i, j) = exp(-((i-k-1)^2+(j-k-1)^2)/(2*a*a))/(2*pi*a*a);
         end
     end
